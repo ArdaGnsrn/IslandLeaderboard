@@ -27,7 +27,7 @@ public class UpdateListener implements Listener {
             @Override
             public void run() {
                 if (p.isOp()) {
-                    new UpdateChecker(plugin, 70031).getVersion(version -> {
+                    new UpdateChecker(plugin, 81369).getVersion(version -> {
                         if (!plugin.getDescription().getVersion().equalsIgnoreCase(version)) {
                             p.sendMessage(Utils.c(plugin.getUpdateMessage(true)));
                         }

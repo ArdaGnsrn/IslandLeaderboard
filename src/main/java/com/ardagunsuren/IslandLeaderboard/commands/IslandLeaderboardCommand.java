@@ -47,7 +47,7 @@ public class IslandLeaderboardCommand implements CommandExecutor {
             sendMessage(p, "&cAll statistics have been updated!");
             return true;
         } else if (args[0].equalsIgnoreCase("checkupdate")) {
-            new UpdateChecker(plugin, 70031).getVersion(version -> {
+            new UpdateChecker(plugin, 81369).getVersion(version -> {
                 sendMessage(p, plugin.getUpdateMessage(!plugin.getDescription().getVersion().equalsIgnoreCase(version)));
             });
             return true;

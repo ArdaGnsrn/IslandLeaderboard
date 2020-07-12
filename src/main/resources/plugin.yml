@@ -1,6 +1,6 @@
   name: IslandLeaderboard
   main: com.ardagunsuren.IslandLeaderboard.IslandLeaderboard
-  version: "V1.0.0"
+  version: "1.0"
   author: ArdaGnsrn
   website: https://ardagunsuren.com
   softdepend:

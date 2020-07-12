@@ -85,16 +85,15 @@ public class IslandLeaderboard extends JavaPlugin {
 
     public void checkUpdate() {
 
-        new UpdateChecker(this, 70031).getVersion(version -> {
+        new UpdateChecker(this, 81369).getVersion(version -> {
             if (!this.getDescription().getVersion().equalsIgnoreCase(version)) {
-                getLogger().info("A new update is available for download at https://www.spigotmc.org/resources/"); //TODO
-            }
+                getLogger().info("A new update is available for download at https://www.spigotmc.org/resources/81369/");             }
         });
     }
 
     public String getUpdateMessage(boolean update) {
         if (update) {
-            return "&9[IslandLeaderboard] &aA new update is available for download at https://www.spigotmc.org/resources/"; //TODO
+            return "&9[IslandLeaderboard] &aA new update is available for download at https://www.spigotmc.org/resources/81369/";
         } else {
             return "&9[IslandLeaderboard] &aThere is not a new update available.";
         }
