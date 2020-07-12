@@ -8,4 +8,4 @@
     - IridiumSkyblock
   commands:
       islandleaderboard:
-          aliases: [isboard, isleader]
+          aliases: [isboard, ib]

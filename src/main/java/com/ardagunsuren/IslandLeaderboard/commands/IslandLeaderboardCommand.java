@@ -30,6 +30,7 @@ public class IslandLeaderboardCommand implements CommandExecutor {
         }
         Player p = ((Player) sender).getPlayer();
         if (args.length == 0) {
+            sendMessage(p, "&9&lPowered By ArdaGnsrn");
             sendMessage(p, " ");
             sendMessage(p, "&cCommands:");
             sendMessage(p, "&6/islandleaderboard updateall: &eUpdates all statistics");
@@ -40,6 +41,10 @@ public class IslandLeaderboardCommand implements CommandExecutor {
             sendMessage(p, " ");
             return true;
         } else if (args[0].equalsIgnoreCase("updateall")) {
+            if (!isHavePermission(p, "updateall")) {
+                p.sendMessage(ChatColor.RED + "You don't have permission to do this!");
+                return true;
+            }
             for (DependsObject object : plugin.getDependsMap().values()) {
                 object.updateTopTen();
                 sendMessage(p, "&c" + object.getDependName() + " updated!");
@@ -47,11 +52,16 @@ public class IslandLeaderboardCommand implements CommandExecutor {
             sendMessage(p, "&cAll statistics have been updated!");
             return true;
         } else if (args[0].equalsIgnoreCase("checkupdate")) {
+            if (!isHavePermission(p, "checkupdate")) {
+                p.sendMessage(ChatColor.RED + "You don't have permission to do this!");
+                return true;
+            }
             new UpdateChecker(plugin, 81369).getVersion(version -> {
                 sendMessage(p, plugin.getUpdateMessage(!plugin.getDescription().getVersion().equalsIgnoreCase(version)));
             });
             return true;
         } else {
+            sendMessage(p, "&9&lPowered By ArdaGnsrn");
             sendMessage(p, " ");
             sendMessage(p, "&cCommands:");
             sendMessage(p, "&6/islandleaderboard updateall: &eUpdates all statistics");
@@ -81,5 +91,9 @@ public class IslandLeaderboardCommand implements CommandExecutor {
             }
         }
 
+    }
+
+    private boolean isHavePermission(Player p, String perm) {
+        return p.isOp() || p.hasPermission("islandleaderboard.*") || p.hasPermission("island.leaderboard." + perm);
     }
 }

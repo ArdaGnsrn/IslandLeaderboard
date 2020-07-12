@@ -27,7 +27,7 @@ public class IslandLeaderboard extends JavaPlugin {
     @Getter
     private List<Depend> enabledDepends = new ArrayList<>();
     @Getter
-    private boolean checkUpdate = false;
+    private boolean checkUpdate = true;
 
     @Override
     public void onEnable() {
