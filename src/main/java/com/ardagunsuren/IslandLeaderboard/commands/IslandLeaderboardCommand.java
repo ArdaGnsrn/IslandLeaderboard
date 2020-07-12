@@ -94,6 +94,6 @@ public class IslandLeaderboardCommand implements CommandExecutor {
     }
 
     private boolean isHavePermission(Player p, String perm) {
-        return p.isOp() || p.hasPermission("islandleaderboard.*") || p.hasPermission("island.leaderboard." + perm);
+        return p.isOp() || p.hasPermission("islandleaderboard.*") || p.hasPermission("islandleaderboard." + perm);
     }
 }
