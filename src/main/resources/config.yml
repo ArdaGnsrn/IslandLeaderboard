@@ -1,0 +1,26 @@
+settings:
+  checkUpdate: false
+
+database:
+  hostName: "mysql.imperialcube.com"
+  port: 3306
+  userName: "root"
+  password: "password"
+
+depends:
+  ASkyBlock:
+    interval: 10 #minute
+    table: "IslandLeaderboard_ASkyBlock"
+    idColumn: "id"
+    leaderNameColumn: "leader"
+    teamColumn: "team"
+    levelColumn: "level"
+    database: "admin_KingBot"
+  IridiumSkyblock:
+    interval: 10 #minute
+    table: "IslandLeaderboard_IridiumSkyblock"
+    idColumn: "id"
+    leaderNameColumn: "leader"
+    teamColumn: "team"
+    levelColumn: "level"
+    database: "admin_KingBot"
