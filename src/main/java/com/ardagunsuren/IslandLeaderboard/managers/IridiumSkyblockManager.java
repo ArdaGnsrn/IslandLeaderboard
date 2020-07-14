@@ -16,10 +16,8 @@ import java.util.UUID;
 
 public class IridiumSkyblockManager {
     private IslandLeaderboard plugin;
-    private IridiumSkyblock api;
     public IridiumSkyblockManager (IslandLeaderboard plugin) {
         this.plugin = plugin;
-        api = IridiumSkyblock.getInstance();
     }
 
     public void updateTop(DependsObject object) {
