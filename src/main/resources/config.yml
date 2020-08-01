@@ -1,3 +1,5 @@
+# Config Version [2.0]
+
 settings:
   checkUpdate: true
 
@@ -19,6 +21,14 @@ depends:
   IridiumSkyblock:
     interval: 10 #minute
     table: "IslandLeaderboard_IridiumSkyblock"
+    idColumn: "id"
+    leaderNameColumn: "leader"
+    teamColumn: "team"
+    levelColumn: "level"
+    database: "YOUR DATABASE"
+  FabledSkyBlock:
+    interval: 10 #minute
+    table: "IslandLeaderboard_FabledSkyBlock"
     idColumn: "id"
     leaderNameColumn: "leader"
     teamColumn: "team"

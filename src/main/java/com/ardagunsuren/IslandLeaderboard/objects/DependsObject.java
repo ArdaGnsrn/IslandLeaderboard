@@ -82,6 +82,8 @@ public class DependsObject {
             plugin.getASkyBlockManager().updateTopTen(this);
         } else if (depend == Depend.IridiumSkyblock) {
             plugin.getIridiumSkyblockManager().updateTop(this);
+        } else if (depend == Depend.FabledSkyBlock) {
+            plugin.getFabledSkyblockManager().updateTop(this);
         }
 
     }
@@ -91,7 +93,7 @@ public class DependsObject {
     }
 
     private void createTable() {
-        plugin.getSqlManager().updateSQL("CREATE TABLE IF NOT EXISTS `" + database + "`.`" + table + "` ( `" + idColumn + "` int(11) DEFAULT NULL, `" + leaderNameColumn + "` text, `" + teamColumn + "` text, `" + levelColumn + "` text);");
+        plugin.getSqlManager().updateSQL("CREATE TABLE IF NOT EXISTS `" + database + "`.`" + table + "` ( `" + idColumn + "` int(11) DEFAULT NULL, `" + leaderNameColumn + "` text, `" + teamColumn + "` text, `" + levelColumn + "` int(11) DEFAULT NULL);");
     }
 
     public void setLastUpdate() {

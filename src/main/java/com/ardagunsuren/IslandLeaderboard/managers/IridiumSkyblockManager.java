@@ -2,13 +2,9 @@ package com.ardagunsuren.IslandLeaderboard.managers;
 
 import com.ardagunsuren.IslandLeaderboard.IslandLeaderboard;
 import com.ardagunsuren.IslandLeaderboard.objects.DependsObject;
-import com.iridium.iridiumskyblock.IridiumSkyblock;
 import com.iridium.iridiumskyblock.Island;
 import com.iridium.iridiumskyblock.Utils;
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.Statistic;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +44,6 @@ public class IridiumSkyblockManager {
         while (members.contains(leader)) {
             members.remove(leader);
         }
-        return String.join(", ", members);
+        return members.size() <= 0 ? "-" : String.join(", ", members);
     }
 }

@@ -13,13 +13,22 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.util.StringUtil;
 
-public class IslandLeaderboardCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class IslandLeaderboardCommand implements CommandExecutor, TabCompleter {
     private IslandLeaderboard plugin;
+    private final String[] subCommands = { "updateall", "checkupdate" };
     public IslandLeaderboardCommand(IslandLeaderboard plugin) {
         this.plugin = plugin;
         plugin.getCommand("islandleaderboard").setExecutor(this);
+        plugin.getCommand("islandleaderboard").setTabCompleter(this);
     }
 
     @Override
@@ -95,5 +104,13 @@ public class IslandLeaderboardCommand implements CommandExecutor {
 
     private boolean isHavePermission(Player p, String perm) {
         return p.isOp() || p.hasPermission("islandleaderboard.*") || p.hasPermission("islandleaderboard." + perm);
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        final List<String> completions = new ArrayList<>();
+        StringUtil.copyPartialMatches(args[0], Arrays.asList(subCommands), completions);
+        Collections.sort(completions);
+        return completions;
     }
 }

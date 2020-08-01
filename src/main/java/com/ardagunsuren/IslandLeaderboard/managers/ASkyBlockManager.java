@@ -43,7 +43,7 @@ public class ASkyBlockManager {
                     members.add(Bukkit.getOfflinePlayer(uuid).getName());
                 }
             }
-            plugin.getSqlManager().updateTopTen(object, i, leader, String.join(", ", members), level);
+            plugin.getSqlManager().updateTopTen(object, i, leader, members.size() <= 0 ? "-" : String.join(", ", members), level);
         }
         object.setLastUpdate();
         plugin.getLogger().info(object.getDependName() + " leaderboard updated.");

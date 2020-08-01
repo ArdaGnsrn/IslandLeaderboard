@@ -4,6 +4,7 @@ import com.ardagunsuren.IslandLeaderboard.commands.IslandLeaderboardCommand;
 import com.ardagunsuren.IslandLeaderboard.enums.Depend;
 import com.ardagunsuren.IslandLeaderboard.listeners.UpdateListener;
 import com.ardagunsuren.IslandLeaderboard.managers.ASkyBlockManager;
+import com.ardagunsuren.IslandLeaderboard.managers.FabledSkyblockManager;
 import com.ardagunsuren.IslandLeaderboard.managers.IridiumSkyblockManager;
 import com.ardagunsuren.IslandLeaderboard.managers.SQLManager;
 import com.ardagunsuren.IslandLeaderboard.objects.DependsObject;
@@ -13,7 +14,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class IslandLeaderboard extends JavaPlugin {
     @Getter
@@ -22,6 +22,8 @@ public class IslandLeaderboard extends JavaPlugin {
     private ASkyBlockManager aSkyBlockManager;
     @Getter
     private IridiumSkyblockManager iridiumSkyblockManager;
+    @Getter
+    private FabledSkyblockManager fabledSkyblockManager;
     @Getter
     private Map<Depend, DependsObject> dependsMap = new HashMap<>();
     @Getter
@@ -43,6 +45,7 @@ public class IslandLeaderboard extends JavaPlugin {
         sqlManager = new SQLManager(this);
         aSkyBlockManager = new ASkyBlockManager(this);
         iridiumSkyblockManager = new IridiumSkyblockManager(this);
+        fabledSkyblockManager = new FabledSkyblockManager(this);
         new IslandLeaderboardCommand(this);
         loadDepends();
         new UpdateListener(this);

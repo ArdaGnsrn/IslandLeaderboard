@@ -94,6 +94,13 @@
             <version>LATEST</version>
             <systemPath>${library}/IridiumSkyblock-2.4.5.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>FabledSkyblock</groupId>
+            <artifactId>FabledSkyblock</artifactId>
+            <scope>system</scope>
+            <version>LATEST</version>
+            <systemPath>${project.basedir}/lib/FabledSkyblock-2.3.5.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <properties>
