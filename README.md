@@ -1,6 +1,6 @@
 # IslandLeaderboard
 
-Using this plugin, you can import the leaderboard of the skyblock server you are using ASkyBlock or Iridium Skyblock 'plugin into the database. In this way, you can create a leaderboard for skyblock on your website.
+Using this plugin, you can import the leaderboard of the skyblock server you are using ASkyBlock, FabledSkyBlock or Iridium Skyblock 'plugin into the database. In this way, you can create a leaderboard for skyblock on your website.
 
 ## Download Plugin
 [Download on spigotmc.org](https://www.spigotmc.org/resources/81369/)
